@@ -78,13 +78,9 @@ class TrimmerCore implements TrimmerCoreInterface
     {
         if (is_string($items)) {
             return $function($items, $characters);
-        }
-
-        if (is_array($items)) {
+        } elseif (is_array($items)) {
             return $this->applyTrimArray($function, $characters, $items);
-        }
-
-        if (is_object($items)) {
+        } elseif (is_object($items)) {
             return $this->applyTrimObject($function, $characters, $items);
         }
 
