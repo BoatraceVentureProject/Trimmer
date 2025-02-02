@@ -39,20 +39,16 @@ var_dump(Trimmer::rtrim(' @trimmer@ ', "\x20\x40")); // string(9) " @trimmer"
 var_dump(Trimmer::trim([' trimmerA ']));
 /*------------------------------
 array(1) {
-  [0]=>
-  string(8) "trimmerA"
+  [0]=>string(8) "trimmerA"
 }
 ------------------------------*/
 
 var_dump(Trimmer::trim([' trimmerA ', [' trimmerB ']]));
 /*------------------------------
 array(2) {
-  [0]=>
-  string(8) "trimmerA"
-  [1]=>
-  array(1) {
-    [0]=>
-    string(8) "trimmerB"
+  [0]=>string(8) "trimmerA"
+  [1]=>array(1) {
+    [0]=>string(8) "trimmerB"
   }
 }
 ------------------------------*/
@@ -60,36 +56,24 @@ array(2) {
 var_dump(Trimmer::trim([' trimmerA ', 1, 1.0, true, null]));
 /*------------------------------
 array(5) {
-  [0]=>
-  string(8) "trimmerA"
-  [1]=>
-  int(1)
-  [2]=>
-  float(1)
-  [3]=>
-  bool(true)
-  [4]=>
-  NULL
+  [0]=>string(8) "trimmerA"
+  [1]=>int(1)
+  [2]=>float(1)
+  [3]=>bool(true)
+  [4]=>NULL
 }
 ------------------------------*/
 
 var_dump(Trimmer::trim([' trimmerA ', [' trimmerB ', 1, 1.0, true, null]]));
 /*------------------------------
 array(2) {
-  [0]=>
-  string(8) "trimmerA"
-  [1]=>
-  array(5) {
-    [0]=>
-    string(8) "trimmerB"
-    [1]=>
-    int(1)
-    [2]=>
-    float(1)
-    [3]=>
-    bool(true)
-    [4]=>
-    NULL
+  [0]=>string(8) "trimmerA"
+  [1]=>array(5) {
+    [0]=>string(8) "trimmerB"
+    [1]=>int(1)
+    [2]=>float(1)
+    [3]=>bool(true)
+    [4]=>NULL
   }
 }
 ------------------------------*/
@@ -112,10 +96,8 @@ $objectA = new class {
 var_dump(Trimmer::trim($objectA));
 /*------------------------------
 object(class@anonymous)#2 (2) {
-  ["propertyA":"class@anonymous":private]=>
-  string(8) "trimmerA"
-  ["propertyB":"class@anonymous":private]=>
-  string(10) " trimmerB "
+  ["propertyA":"class@anonymous":private]=>string(8) "trimmerA"
+  ["propertyB":"class@anonymous":private]=>string(10) " trimmerB "
 }
 ------------------------------*/
 
@@ -135,16 +117,11 @@ $objectB = new class($objectA) {
 var_dump(Trimmer::trim($objectB));
 /*------------------------------
 object(class@anonymous)#6 (3) {
-  ["propertyC":"class@anonymous":private]=>
-  string(8) "trimmerC"
-  ["propertyD":"class@anonymous":private]=>
-  string(10) " trimmerD "
-  ["objectA":"class@anonymous":private]=>
-  object(class@anonymous)#2 (2) {
-    ["propertyA":"class@anonymous":private]=>
-    string(8) "trimmerA"
-    ["propertyB":"class@anonymous":private]=>
-    string(10) " trimmerB "
+  ["propertyC":"class@anonymous":private]=>string(8) "trimmerC"
+  ["propertyD":"class@anonymous":private]=>string(10) " trimmerD "
+  ["objectA":"class@anonymous":private]=>object(class@anonymous)#2 (2) {
+    ["propertyA":"class@anonymous":private]=>string(8) "trimmerA"
+    ["propertyB":"class@anonymous":private]=>string(10) " trimmerB "
   }
 }
 ------------------------------*/
