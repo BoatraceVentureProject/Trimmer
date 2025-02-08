@@ -1,7 +1,7 @@
 {
     "name": "bvp/trimmer",
     "description": "The BVP Trimmer package for strings, arrays, and objects.",
-    "keywords": ["trimmer", "library"],
+    "keywords": ["library", "boatrace", "trimmer"],
     "license": "MIT",
     "type": "library",
     "authors": [
