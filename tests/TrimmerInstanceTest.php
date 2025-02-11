@@ -7,12 +7,12 @@ namespace BVP\Trimmer\Tests;
 use BVP\Trimmer\Trimmer;
 use BVP\Trimmer\TrimmerInterface;
 use BVP\Trimmer\TrimmerCoreInterface;
-use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author shimomo
  */
-class TrimmerInstanceTest extends PHPUnitTestCase
+class TrimmerInstanceTest extends TestCase
 {
     /**
      * @return void

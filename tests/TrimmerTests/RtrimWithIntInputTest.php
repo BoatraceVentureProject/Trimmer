@@ -6,12 +6,12 @@ namespace BVP\Trimmer\Tests\TrimmerTests;
 
 use BVP\Trimmer\Trimmer;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author shimomo
  */
-class RtrimWithIntInputTest extends PHPUnitTestCase
+class RtrimWithIntInputTest extends TestCase
 {
     /**
      * @param  int  $input

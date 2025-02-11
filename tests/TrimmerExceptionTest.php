@@ -6,12 +6,12 @@ namespace BVP\Trimmer\Tests;
 
 use BadMethodCallException;
 use BVP\Trimmer\Trimmer;
-use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author shimomo
  */
-class TrimmerExceptionTest extends PHPUnitTestCase
+class TrimmerExceptionTest extends TestCase
 {
     /**
      * @return void
