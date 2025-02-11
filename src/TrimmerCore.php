@@ -28,7 +28,7 @@ class TrimmerCore implements TrimmerCoreInterface
     public function __call(string $name, array $arguments): void
     {
         throw new BadMethodCallException(
-            'Method \'' . $name . '\' does not exist on \'' . self::class . '\'.'
+            __METHOD__ . "() - The specified method '{$name}' does not exist in class '" . self::class . "'."
         );
     }
 

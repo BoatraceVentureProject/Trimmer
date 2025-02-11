@@ -20,7 +20,8 @@ class TrimmerExceptionTest extends PHPUnitTestCase
     {
         $this->expectException(BadMethodCallException::class);
         $this->expectExceptionMessage(
-            'Method \'invalid\' does not exist on \'BVP\Trimmer\TrimmerCore\'.'
+            "BVP\Trimmer\TrimmerCore::__call() - " .
+            "The specified method 'invalid' does not exist in class 'BVP\Trimmer\TrimmerCore'."
         );
 
         Trimmer::invalid();
