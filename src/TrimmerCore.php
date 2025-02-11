@@ -21,11 +21,11 @@ class TrimmerCore implements TrimmerCoreInterface
     /**
      * @param  string  $name
      * @param  array   $arguments
-     * @return void
+     * @return never
      *
      * @throws \BadMethodCallException
      */
-    public function __call(string $name, array $arguments): void
+    public function __call(string $name, array $arguments): never
     {
         throw new BadMethodCallException(
             __METHOD__ . "() - The specified method '{$name}' does not exist in class '" . self::class . "'."
