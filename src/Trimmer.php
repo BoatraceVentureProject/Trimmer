@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project;
+namespace BVP\Trimmer;
 
 use DeepCopy\DeepCopy;
 
@@ -12,12 +12,12 @@ use DeepCopy\DeepCopy;
 class Trimmer implements TrimmerInterface
 {
     /**
-     * @var \Boatrace\Venture\Project\TrimmerInterface|null
+     * @var \BVP\Trimmer\TrimmerInterface|null
      */
     private static ?TrimmerInterface $instance;
 
     /**
-     * @param  \Boatrace\Venture\Project\TrimmerCoreInterface  $trimmer
+     * @param  \BVP\Trimmer\TrimmerCoreInterface  $trimmer
      * @return void
      */
     public function __construct(private readonly TrimmerCoreInterface $trimmer) {}
@@ -43,8 +43,8 @@ class Trimmer implements TrimmerInterface
     }
 
     /**
-     * @param  \Boatrace\Venture\Project\TrimmerCoreInterface|null  $trimmerCore
-     * @return \Boatrace\Venture\Project\TrimmerInterface
+     * @param  \BVP\Trimmer\TrimmerCoreInterface|null  $trimmerCore
+     * @return \BVP\Trimmer\TrimmerInterface
      */
     public static function getInstance(?TrimmerCoreInterface $trimmerCore = null): TrimmerInterface
     {
@@ -52,8 +52,8 @@ class Trimmer implements TrimmerInterface
     }
 
     /**
-     * @param  \Boatrace\Venture\Project\TrimmerCoreInterface|null  $trimmerCore
-     * @return \Boatrace\Venture\Project\TrimmerInterface
+     * @param  \BVP\Trimmer\TrimmerCoreInterface|null  $trimmerCore
+     * @return \BVP\Trimmer\TrimmerInterface
      */
     public static function createInstance(?TrimmerCoreInterface $trimmerCore = null): TrimmerInterface
     {

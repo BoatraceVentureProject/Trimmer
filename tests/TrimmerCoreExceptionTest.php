@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests;
+namespace BVP\Trimmer\Tests;
 
 use BadMethodCallException;
-use Boatrace\Venture\Project\TrimmerCore;
+use BVP\Trimmer\TrimmerCore;
 
 /**
  * @author shimomo
@@ -19,7 +19,7 @@ class TrimmerCoreExceptionTest extends TrimmerCoreTestCase
     {
         $this->expectException(BadMethodCallException::class);
         $this->expectExceptionMessage(
-            'Method \'invalid\' does not exist on \'Boatrace\Venture\Project\TrimmerCore\'.'
+            'Method \'invalid\' does not exist on \'BVP\Trimmer\TrimmerCore\'.'
         );
 
         $this->trimmer->invalid();

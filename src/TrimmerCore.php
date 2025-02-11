@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project;
+namespace BVP\Trimmer;
 
 use BadMethodCallException;
 use DeepCopy\DeepCopy;

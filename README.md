@@ -19,7 +19,7 @@ composer require bvp/trimmer
 
 require __DIR__ . '/vendor/autoload.php';
 
-use Boatrace\Venture\Project\Trimmer;
+use BVP\Trimmer\Trimmer;
 ```
 
 ### For strings

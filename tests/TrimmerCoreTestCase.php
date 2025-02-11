@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests;
+namespace BVP\Trimmer\Tests;
 
-use Boatrace\Venture\Project\TrimmerCore;
+use BVP\Trimmer\TrimmerCore;
 use DeepCopy\DeepCopy;
 use PHPUnit\Framework\TestCase;
 
@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 abstract class TrimmerCoreTestCase extends TestCase
 {
     /**
-     * @var \Boatrace\Venture\Project\TrimmerCore
+     * @var \BVP\Trimmer\TrimmerCore
      */
     protected TrimmerCore $trimmer;
 

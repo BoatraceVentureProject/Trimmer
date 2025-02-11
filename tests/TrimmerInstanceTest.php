@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests;
+namespace BVP\Trimmer\Tests;
 
-use Boatrace\Venture\Project\Trimmer;
-use Boatrace\Venture\Project\TrimmerInterface;
-use Boatrace\Venture\Project\TrimmerCoreInterface;
+use BVP\Trimmer\Trimmer;
+use BVP\Trimmer\TrimmerInterface;
+use BVP\Trimmer\TrimmerCoreInterface;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
 /**

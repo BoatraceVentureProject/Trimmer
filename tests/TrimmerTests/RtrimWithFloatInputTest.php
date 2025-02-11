@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Boatrace\Venture\Project\Tests\TrimmerTests;
+namespace BVP\Trimmer\Tests\TrimmerTests;
 
-use Boatrace\Venture\Project\Trimmer;
+use BVP\Trimmer\Trimmer;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 
