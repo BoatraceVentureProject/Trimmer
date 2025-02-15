@@ -17,7 +17,7 @@ class TrimmerInstanceTest extends TestCase
     /**
      * @return void
      */
-    public function tearDown(): void
+    protected function tearDown(): void
     {
         Trimmer::resetInstance();
     }
