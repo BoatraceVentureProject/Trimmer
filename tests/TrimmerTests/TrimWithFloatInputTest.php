@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @author shimomo
  */
-class TrimWithFloatInputTest extends TestCase
+final class TrimWithFloatInputTest extends TestCase
 {
     /**
      * @param  float  $input

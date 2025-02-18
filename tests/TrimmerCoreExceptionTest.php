@@ -10,7 +10,7 @@ use BVP\Trimmer\TrimmerCore;
 /**
  * @author shimomo
  */
-class TrimmerCoreExceptionTest extends TrimmerCoreTestCase
+final class TrimmerCoreExceptionTest extends TrimmerCoreTestCase
 {
     /**
      * @return void

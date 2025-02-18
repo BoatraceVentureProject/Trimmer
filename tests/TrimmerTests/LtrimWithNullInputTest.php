@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @author shimomo
  */
-class LtrimWithNullInputTest extends TestCase
+final class LtrimWithNullInputTest extends TestCase
 {
     /**
      * @param  mixed  $input

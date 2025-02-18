@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @author shimomo
  */
-class RtrimWithIntInputTest extends TestCase
+final class RtrimWithIntInputTest extends TestCase
 {
     /**
      * @param  int  $input

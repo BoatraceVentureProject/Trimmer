@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @author shimomo
  */
-class TrimmerExceptionTest extends TestCase
+final class TrimmerExceptionTest extends TestCase
 {
     /**
      * @return void

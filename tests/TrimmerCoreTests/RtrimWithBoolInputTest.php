@@ -10,7 +10,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 /**
  * @author shimomo
  */
-class RtrimWithBoolInputTest extends TrimmerCoreTestCase
+final class RtrimWithBoolInputTest extends TrimmerCoreTestCase
 {
     /**
      * @param  bool  $input

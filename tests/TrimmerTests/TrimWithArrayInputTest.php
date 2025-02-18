@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @author shimomo
  */
-class TrimWithArrayInputTest extends TestCase
+final class TrimWithArrayInputTest extends TestCase
 {
     /**
      * @param  array  $input

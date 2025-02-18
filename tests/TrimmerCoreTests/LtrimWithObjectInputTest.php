@@ -10,7 +10,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 /**
  * @author shimomo
  */
-class LtrimWithObjectInputTest extends TrimmerCoreTestCase
+final class LtrimWithObjectInputTest extends TrimmerCoreTestCase
 {
     /**
      * @param  object  $input

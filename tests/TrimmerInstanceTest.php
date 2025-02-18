@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @author shimomo
  */
-class TrimmerInstanceTest extends TestCase
+final class TrimmerInstanceTest extends TestCase
 {
     /**
      * @return void
