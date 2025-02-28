@@ -10,20 +10,6 @@ namespace BVP\Trimmer;
 interface TrimmerInterface
 {
     /**
-     * @param  string  $name
-     * @param  array   $arguments
-     * @return mixed
-     */
-    public function __call(string $name, array $arguments): mixed;
-
-    /**
-     * @param  string  $name
-     * @param  array   $arguments
-     * @return mixed
-     */
-    public static function __callStatic(string $name, array $arguments): mixed;
-
-    /**
      * @param  \BVP\Trimmer\TrimmerCoreInterface|null  $trimmerCore
      * @return \BVP\Trimmer\TrimmerInterface
      */
