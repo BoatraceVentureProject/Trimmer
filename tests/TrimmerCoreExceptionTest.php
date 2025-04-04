@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace BVP\Trimmer\Tests;
 
-use BadMethodCallException;
 use BVP\Trimmer\TrimmerCore;
 
 /**
@@ -17,7 +16,7 @@ final class TrimmerCoreExceptionTest extends TrimmerCoreTestCase
      */
     public function testException(): void
     {
-        $this->expectException(BadMethodCallException::class);
+        $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage(
             "BVP\Trimmer\TrimmerCore::__call() - " .
             "The specified method 'invalid' does not exist in class 'BVP\Trimmer\TrimmerCore'."
