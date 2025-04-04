@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace BVP\Trimmer\Tests;
 
 use BVP\Trimmer\Trimmer;
-use BVP\Trimmer\TrimmerInterface;
 use BVP\Trimmer\TrimmerCoreInterface;
+use BVP\Trimmer\TrimmerInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
