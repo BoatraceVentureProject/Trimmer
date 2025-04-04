@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace BVP\Trimmer;
 
-use BadMethodCallException;
 use DeepCopy\DeepCopy;
 
 /**
@@ -27,7 +26,7 @@ class TrimmerCore implements TrimmerCoreInterface
      */
     public function __call(string $name, array $arguments): never
     {
-        throw new BadMethodCallException(
+        throw new \BadMethodCallException(
             __METHOD__ . "() - The specified method '{$name}' does not exist in class '" . self::class . "'."
         );
     }
