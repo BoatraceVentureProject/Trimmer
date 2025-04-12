@@ -92,7 +92,7 @@ $objectB = new class($objectA) {
 };
 
 Trimmer::trim($objectB);
-// $propertyC と $objectA->propertyA がトリムされます。
+// $propertyC と $objectA->propertyA がトリムされます。$propertyD と $objectA->propertyB はそのままです。
 ```
 
 ltrim, rtrim も同様に使用可能ですが、冗長を避けるためここでは省略しています。
