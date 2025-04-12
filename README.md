@@ -1,13 +1,21 @@
 # BVP Trimmer
 
+[English](./README.md) | [日本語](./README_ja.md)
+
 [![Build Status](https://github.com/shimomo/bvp-trimmer/workflows/Tests/badge.svg)](https://github.com/shimomo/bvp-trimmer/actions?query=workflow%3Atests)
 [![codecov](https://codecov.io/gh/shimomo/bvp-trimmer/graph/badge.svg?token=27E93D01MN)](https://codecov.io/gh/shimomo/bvp-trimmer)
-[![PHP Version Require](http://poser.pugx.org/bvp/trimmer/require/php)](https://packagist.org/packages/bvp/trimmer)
+[![PHP Version Require](https://poser.pugx.org/bvp/trimmer/require/php)](https://packagist.org/packages/bvp/trimmer)
 [![Latest Stable Version](https://poser.pugx.org/bvp/trimmer/v/stable)](https://packagist.org/packages/bvp/trimmer)
 [![Latest Unstable Version](https://poser.pugx.org/bvp/trimmer/v/unstable)](https://packagist.org/packages/bvp/trimmer)
 [![License](https://poser.pugx.org/bvp/trimmer/license)](https://packagist.org/packages/bvp/trimmer)
 
-The BVP Trimmer package extends PHP's internal functions trim, ltrim, and rtrim to also be applicable to arrays and objects.
+The BVP Trimmer package extends PHP's built-in trim, ltrim, and rtrim functions so they can also be used with arrays and objects.
+
+## Features
+- Recursively trims all string elements in arrays
+- Trims object properties via getter/setter methods
+- Supports nested arrays and nested objects
+- API is consistent with trim, ltrim, and rtrim
 
 ## Installation
 ```bash
@@ -25,86 +33,54 @@ use BVP\Trimmer\Trimmer;
 
 ### For strings
 ```php
-var_dump(Trimmer::trim(' trimmer '));                // string(7) "trimmer"
-var_dump(Trimmer::trim(' @trimmer@ ', "\x20\x40"));  // string(7) "trimmer"
+Trimmer::trim(' trimmer ');                // "trimmer"
+Trimmer::trim(' @trimmer@ ', "\x20\x40");  // "trimmer"
 
-var_dump(Trimmer::ltrim(' trimmer '));               // string(8) "trimmer "
-var_dump(Trimmer::ltrim(' @trimmer@ ', "\x20\x40")); // string(9) "trimmer@ "
+Trimmer::ltrim(' trimmer ');               // "trimmer "
+Trimmer::ltrim(' @trimmer@ ', "\x20\x40"); // "trimmer@ "
 
-var_dump(Trimmer::rtrim(' trimmer '));               // string(8) " trimmer"
-var_dump(Trimmer::rtrim(' @trimmer@ ', "\x20\x40")); // string(9) " @trimmer"
+Trimmer::rtrim(' trimmer ');               // " trimmer"
+Trimmer::rtrim(' @trimmer@ ', "\x20\x40"); // " @trimmer"
 ```
 
 ### For arrays
 ```php
-var_dump(Trimmer::trim([' trimmerA ']));
-/*------------------------------
-array(1) {
-  [0]=>string(8) "trimmerA"
-}
-------------------------------*/
+Trimmer::trim([' trimmerA ']);
+// => ["trimmerA"]
 
-var_dump(Trimmer::trim([' trimmerA ', [' trimmerB ']]));
-/*------------------------------
-array(2) {
-  [0]=>string(8) "trimmerA"
-  [1]=>array(1) {
-    [0]=>string(8) "trimmerB"
-  }
-}
-------------------------------*/
+Trimmer::trim([' trimmerA ', [' trimmerB ']]);
+// => ["trimmerA", ["trimmerB"]]
 
-var_dump(Trimmer::trim([' trimmerA ', 1, 1.0, true, null]));
-/*------------------------------
-array(5) {
-  [0]=>string(8) "trimmerA"
-  [1]=>int(1)
-  [2]=>float(1)
-  [3]=>bool(true)
-  [4]=>NULL
-}
-------------------------------*/
+Trimmer::trim([' trimmerA ', 1, 1.0, true, null]);
+// => ["trimmerA", 1, 1.0, true, null]
 
-var_dump(Trimmer::trim([' trimmerA ', [' trimmerB ', 1, 1.0, true, null]]));
-/*------------------------------
-array(2) {
-  [0]=>string(8) "trimmerA"
-  [1]=>array(5) {
-    [0]=>string(8) "trimmerB"
-    [1]=>int(1)
-    [2]=>float(1)
-    [3]=>bool(true)
-    [4]=>NULL
-  }
-}
-------------------------------*/
-
-// We will omit examples for ltrim and rtrim to keep the documentation concise.
+Trimmer::trim([' trimmerA ', [' trimmerB ', 1, 1.0, true, null]]);
+// => ["trimmerA", ["trimmerB", 1, 1.0, true, null]]
 ```
 
+Examples for ltrim and rtrim are omitted for brevity but work the same way.
+
 ### For objects
-Trimming properties requires both getters and setters. For objects within objects, getters for the inner object are also required.
+Trimming object properties requires both getter and setter methods. Nested objects are also supported.
 
 ```php
 $objectA = new class {
     private string $propertyA = ' trimmerA ';
-    private string $propertyB = ' trimmerB '; // This property is not subject to trimming.
+    private string $propertyB = ' trimmerB '; // This will not be trimmed.
     public function getPropertyA(): string { return $this->propertyA; }
     public function setPropertyA(string $value): void { $this->propertyA = $value; }
     public function getPropertyB(): string { return $this->propertyB; }
 };
 
-var_dump(Trimmer::trim($objectA));
-/*------------------------------
-object(class@anonymous)#2 (2) {
-  ["propertyA":"class@anonymous":private]=>string(8) "trimmerA"
-  ["propertyB":"class@anonymous":private]=>string(10) " trimmerB "
-}
-------------------------------*/
+Trimmer::trim($objectA);
+// $propertyA will be trimmed, $propertyB will remain unchanged.
+```
 
+Nested objects are supported as well:
+```php
 $objectB = new class($objectA) {
     private string $propertyC = ' trimmerC ';
-    private string $propertyD = ' trimmerD '; // This property is not subject to trimming.
+    private string $propertyD = ' trimmerD '; // This will not be trimmed.
     private object $objectA;
     public function __construct(object $objectA) {
         $this->objectA = $objectA;
@@ -115,20 +91,14 @@ $objectB = new class($objectA) {
     public function getObjectA(): object { return $this->objectA; }
 };
 
-var_dump(Trimmer::trim($objectB));
-/*------------------------------
-object(class@anonymous)#6 (3) {
-  ["propertyC":"class@anonymous":private]=>string(8) "trimmerC"
-  ["propertyD":"class@anonymous":private]=>string(10) " trimmerD "
-  ["objectA":"class@anonymous":private]=>object(class@anonymous)#2 (2) {
-    ["propertyA":"class@anonymous":private]=>string(8) "trimmerA"
-    ["propertyB":"class@anonymous":private]=>string(10) " trimmerB "
-  }
-}
-------------------------------*/
-
-// We will omit examples for ltrim and rtrim to keep the documentation concise.
+Trimmer::trim($objectB);
+// $propertyC and $objectA->propertyA will be trimmed, $propertyD and $objectA->$propertyB will remain unchanged.
 ```
+
+Examples for ltrim and rtrim are omitted for brevity but are fully supported.
+
+## Notes
+All `Trimmer::trim`, `Trimmer::ltrim`, and `Trimmer::rtrim` methods are **non-destructive** (they return new values rather than modifying the original data).
 
 ## License
 The BVP Trimmer package is open source software licensed under the [MIT license](LICENSE).
