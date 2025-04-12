@@ -98,7 +98,7 @@ Trimmer::trim($objectB);
 ltrim, rtrim も同様に使用可能ですが、冗長を避けるためここでは省略しています。
 
 ## 備考
-`Trimmer::trim`, `Trimmer::ltrim`, `Trimmer::rtrim` はすべて `非破壊的` です（値を返します）。
+`Trimmer::trim`, `Trimmer::ltrim`, `Trimmer::rtrim` はすべて **非破壊的** です（新しい値を返します）。
 
 ## ライセンス
 このパッケージは [MIT license](LICENSE) のもとで公開されています。
