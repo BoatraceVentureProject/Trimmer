@@ -272,7 +272,7 @@ final class TrimmerTest extends TestCase
             "Call to undefined method 'BVP\Trimmer\TrimmerCore::ghost()'."
         );
 
-        Trimmer::ghost(1, '2024-01-08');
+        Trimmer::ghost();
     }
 
     /**

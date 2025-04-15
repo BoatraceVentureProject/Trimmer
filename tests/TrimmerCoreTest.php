@@ -284,6 +284,6 @@ final class TrimmerCoreTest extends TestCase
             "Call to undefined method 'BVP\Trimmer\TrimmerCore::ghost()'."
         );
 
-        $this->trimmer->ghost(1, '2024-01-08');
+        $this->trimmer->ghost();
     }
 }
