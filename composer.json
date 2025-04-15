@@ -1,4 +1,5 @@
 {
+    "$schema": "https://getcomposer.org/schema.json",
     "name": "bvp/trimmer",
     "description": "The BVP Trimmer package for strings, arrays, and objects.",
     "keywords": [
@@ -11,9 +12,13 @@
     "authors": [
         {
             "name": "shimomo",
-            "email": "developer@shimomo.net"
+            "email": "bvp@shimomo.net"
         }
     ],
+    "support": {
+        "issues": "https://github.com/shimomo/bvp-trimmer/issues",
+        "source": "https://github.com/shimomo/bvp-trimmer"
+    },
     "require": {
         "php": "^8.2",
         "myclabs/deep-copy": "^1.11"
