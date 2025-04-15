@@ -269,7 +269,7 @@ final class TrimmerTest extends TestCase
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage(
             "BVP\Trimmer\TrimmerCore::__call() - " .
-            "The specified method 'ghost' does not exist in class 'BVP\Trimmer\TrimmerCore'."
+            "Call to undefined method 'BVP\Trimmer\TrimmerCore::ghost()'."
         );
 
         Trimmer::ghost(1, '2024-01-08');
