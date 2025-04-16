@@ -264,20 +264,6 @@ final class TrimmerTest extends TestCase
     /**
      * @return void
      */
-    public function testThrowsExceptionWhenMethodDoesNotExist(): void
-    {
-        $this->expectException(\BadMethodCallException::class);
-        $this->expectExceptionMessage(
-            "BVP\Trimmer\TrimmerCore::__call() - " .
-            "Call to undefined method 'BVP\Trimmer\TrimmerCore::ghost()'."
-        );
-
-        Trimmer::ghost();
-    }
-
-    /**
-     * @return void
-     */
     public function testGetInstance(): void
     {
         Trimmer::resetInstance();
@@ -337,5 +323,19 @@ final class TrimmerTest extends TestCase
         Trimmer::resetInstance();
         $instance2 = Trimmer::getInstance();
         $this->assertNotSame($instance1, $instance2);
+    }
+
+    /**
+     * @return void
+     */
+    public function testThrowsExceptionWhenMethodDoesNotExist(): void
+    {
+        $this->expectException(\BadMethodCallException::class);
+        $this->expectExceptionMessage(
+            "BVP\Trimmer\TrimmerCore::__call() - " .
+            "Call to undefined method 'BVP\Trimmer\TrimmerCore::ghost()'."
+        );
+
+        Trimmer::ghost();
     }
 }
