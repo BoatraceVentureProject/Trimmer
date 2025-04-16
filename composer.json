@@ -35,5 +35,7 @@
         "psr-4": {
             "BVP\\Trimmer\\Tests\\": "tests/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
