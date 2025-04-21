@@ -3,10 +3,10 @@
 [English](./README.md) | [日本語](./README_ja.md)
 
 [![Build Status](https://github.com/shimomo/bvp-trimmer/workflows/Tests/badge.svg)](https://github.com/shimomo/bvp-trimmer/actions?query=workflow%3Atests)
-[![codecov](https://codecov.io/gh/shimomo/bvp-trimmer/graph/badge.svg?token=27E93D01MN)](https://codecov.io/gh/shimomo/bvp-trimmer)
+[![codecov](https://codecov.io/gh/shimomo/bvp-trimmer/branch/5.x/graph/badge.svg?token=27E93D01MN)](https://codecov.io/gh/shimomo/bvp-trimmer)
 [![PHP Version Require](https://poser.pugx.org/bvp/trimmer/require/php)](https://packagist.org/packages/bvp/trimmer)
 [![Latest Stable Version](https://poser.pugx.org/bvp/trimmer/v/stable)](https://packagist.org/packages/bvp/trimmer)
-[![Latest Unstable Version](https://poser.pugx.org/bvp/trimmer/v/unstable)](https://packagist.org/packages/bvp/trimmer#4.x-dev)
+[![Latest Unstable Version](https://poser.pugx.org/bvp/trimmer/v/unstable)](https://packagist.org/packages/bvp/trimmer#5.x-dev)
 [![License](https://poser.pugx.org/bvp/trimmer/license)](https://packagist.org/packages/bvp/trimmer)
 
 BVP Trimmer は、PHP 組み込みの trim / ltrim / rtrim 関数を拡張し、配列やオブジェクトにも適用可能にするユーティリティパッケージです。
