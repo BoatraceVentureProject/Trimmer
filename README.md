@@ -6,7 +6,7 @@
 [![codecov](https://codecov.io/gh/shimomo/bvp-trimmer/graph/badge.svg?token=27E93D01MN)](https://codecov.io/gh/shimomo/bvp-trimmer)
 [![PHP Version Require](https://poser.pugx.org/bvp/trimmer/require/php)](https://packagist.org/packages/bvp/trimmer)
 [![Latest Stable Version](https://poser.pugx.org/bvp/trimmer/v/stable)](https://packagist.org/packages/bvp/trimmer)
-[![Latest Unstable Version](https://poser.pugx.org/bvp/trimmer/v/unstable)](https://packagist.org/packages/bvp/trimmer)
+[![Latest Unstable Version](https://poser.pugx.org/bvp/trimmer/v/unstable)](https://packagist.org/packages/bvp/trimmer#4.x-dev)
 [![License](https://poser.pugx.org/bvp/trimmer/license)](https://packagist.org/packages/bvp/trimmer)
 
 The BVP Trimmer package extends PHP's built-in trim, ltrim, and rtrim functions so they can also be used with arrays and objects.
